@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
+// Route::get('/', function () {
+//     return view('app');
+// });
+// Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+Route::get('/{any}', function () {
+    return view('app'); // 確保返回的是包含 Vue app 的視圖
+})->where('any', '.*');
